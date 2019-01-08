@@ -15,6 +15,11 @@ flipCoin(times){
     console.log("The percentage of tails is :"+(tails/times)*100+"%");
 },
 
+
+/**
+ * Leap Program
+ * @param {*} year 
+ */
 leap(year){
     if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
         console.log(year +" is a leap year");
