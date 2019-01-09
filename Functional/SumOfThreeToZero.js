@@ -6,4 +6,4 @@ console.log(arr);
 if(num<3)
     console.log("Since the number of elements in an array is less than three,there is no triplets whose sum is 0.");
 else
-    util.triplet(arr);
+    asyn function a() {await util.triplet(arr);}
