@@ -25,5 +25,8 @@ const readline = require('readline-sync');
  * import the Utility class to use the functionalities.
  */
 const util = require('../Utility/AlgoUtil');
-var range = readline.questionInt("Enter the range from 0 to get the prime numbers from that range");
-var primes =util.prime(range);
+console.log("Enter the range of the number,press enter after first number");
+var first = readline.questionInt("Enter the first number?");
+var last = readline.questionInt("Enter the last number");
+var value = util.binarySearch(first,last);
+console.log("The number you choose was "+value);

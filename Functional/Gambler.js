@@ -24,6 +24,8 @@ const readline = require('readline-sync');
 /**
  * import the Utility class to use the functionalities.
  */
-const util = require('../Utility/AlgoUtil');
-var range = readline.questionInt("Enter the range from 0 to get the prime numbers from that range");
-var primes =util.prime(range);
+const util = require('../Utility/Utility');
+var stake = readline.questionInt("enter player's stake");	     
+var goal = readline.questionInt("enter player's goal");	     	     
+var trials = readline.questionInt("enter the number of player's trials");	     
+util.Gambling(stake,goal,trials);

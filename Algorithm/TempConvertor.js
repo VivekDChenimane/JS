@@ -25,5 +25,12 @@ const readline = require('readline-sync');
  * import the Utility class to use the functionalities.
  */
 const util = require('../Utility/AlgoUtil');
-var range = readline.questionInt("Enter the range from 0 to get the prime numbers from that range");
-var primes =util.prime(range);
+var i = readline.questionInt("Choose your input as 1 if celsius 2 if fahreinheit");
+var temperature; 
+if(i==1) 
+	temperature = readline.questionFloat("Enter temperature in celsius"); 
+else if(i==2) 
+	temperature = readline.questionFloat("Enter temperature in fahreinheit");
+else
+    console.log("Enter the correct option");
+util.temperaturConversion(temperature,i);
