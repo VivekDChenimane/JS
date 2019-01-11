@@ -22,6 +22,17 @@
  */
 const readline = require('readline-sync');
 function replace(){
-   var input=readline.question("Enter the name?");
-    console.log("Hello "+input+", How are you?" ) };
-replace(); 
+    var flag=true
+    while(flag)
+    {
+        var input=readline.question("Enter the name?");
+        if(input.length>2)    
+        {
+                console.log("Hello "+input+", How are you?" ) 
+                flag = false
+        }
+        else
+            console.log("User name should be greater than two letters.")
+    }
+}
+replace();

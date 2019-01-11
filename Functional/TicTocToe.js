@@ -1,14 +1,14 @@
 /************************************************************
- * Execution    :   1. cmd> node Anagram.js
+ * Execution    :   1. cmd> node TicTocToe.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Anagram.js
+ *                  2. cmd> nodemon TicTocToe.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   To play TicTocToe game with user by computer choosing random values.
  * 
  * @description
  * 
- * @file        :   Anagram.js
+ * @file        :   TicTocToe.js
  * @overview    :   Checks two String if they are simply a rearrangement of each other.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0

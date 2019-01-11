@@ -25,10 +25,20 @@ const readline = require('readline-sync');
  * import the Utility class to use the functionalities.
  */
 const util = require('../Utility/AlgoUtil');
+/**
+ * string1 holds the first passed String.
+ */
 var string1 = readline.question("Enter the first String");
+/**
+ * string2 holds the second passed String.
+ */
 var string2 = readline.question("Enter the second String");
+/**
+ * The two Strings are passed to anagram function present in AlgoUtil class
+ * check catches the boolean return value.
+ */
 var check = util.anagram(string1,string2);
-console.log(check);
+/**Print the statement based on the boolean value  */
 if(check)
     console.log("The Strings are Anagram");
 if(check==false)

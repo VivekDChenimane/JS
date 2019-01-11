@@ -1,15 +1,12 @@
 /************************************************************
- * Execution    :   1. cmd> node Anagram.js
- *                   if nodemon is installed:
- *                  2. cmd> nodemon Anagram.js
- *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   To have all the functionalities of Functional Programs.
  * 
  * @description
  * 
- * @file        :   Anagram.js
- * @overview    :   Checks two String if they are simply a rearrangement of each other.
+ * @file        :   Utility.js
+ * @overview    :   Export the functionalities to developers for reuseability,
+ *                  simplification of coding.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   09-01-2019
@@ -20,14 +17,7 @@
  * 'readline'helps to have conversation with the user via a console,
  * '-sync' helps readline to sync even when the input/output stream is redirected.
  */
-const readline = require('readline-sync');
-//  try{
 
-//  }
-//  catch(e)
-//  {
-//      console.log('e', e);
-//  }
 const readline = require('readline-sync');
 module.exports = {
 
@@ -44,17 +34,28 @@ module.exports = {
         console.log("The percentage of tails is :" + (tails / times) * 100 + "%");
     },
 
+ /**
+  * @description   To check wheather the Entered year is a leap year or not.
+  * 
+  * @param {Integer} year
+  */
 
-    /**
-     * Leap Program
-     * @param {*} year 
-     */
     leap(year) {
+        /**
+         * checks the constraints as year should be divisible of 4 and 
+         * should not be multiple of 100 and multiple of 400 as a exception.
+         */
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
             console.log(year + " is a leap year");
         else
             console.log(year + " is not a leap year");
     },
+
+    /**
+     * @description To print the powers of two till the range.
+     * 
+     * @param {Integer} range 
+     */
 
     powerOfTwo(range) {
 
@@ -63,6 +64,13 @@ module.exports = {
             console.log(index + "->" + res);
         }
     },
+
+    /**
+     * @description To get the Harmonic number for the (num)th value.
+     * 
+     * @param {Integer} num 
+     */
+
     harmonic(num) {
         var sum = 0;
         for (let index = 1; index <= num; index++) {
@@ -70,6 +78,14 @@ module.exports = {
         }
         console.log("The " + num + "th number is " + sum);
     },
+
+    /**
+     * @description To play Gambling game and check the luck of the player
+     * 
+     * @param {Integer} stake - present amount the player has.
+     * @param {Integer} goal  - the target of the player.
+     * @param {Integer} trials - the number of times he want to play.
+     */
     Gambling(stake, goal, trials) {
         var loss = 0;
         var bets = 0;
