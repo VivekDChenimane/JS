@@ -1,15 +1,15 @@
 /************************************************************
- * Execution    :   1. cmd> node Anagram.js
+ * Execution    :   1. cmd> node FlipCoin.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Anagram.js
+ *                  2. cmd> nodemon FlipCoin.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   To flip coin and get the percentage of head and tails obtained.
  * 
  * @description
  * 
- * @file        :   Anagram.js
- * @overview    :   Checks two String if they are simply a rearrangement of each other.
+ * @file        :   FlipCoin.js
+ * @overview    :   Sum the number of times the count of heads and tails,calculate the percentage.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   06-01-2019

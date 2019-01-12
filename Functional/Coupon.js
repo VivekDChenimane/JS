@@ -1,15 +1,15 @@
 /************************************************************
- * Execution    :   1. cmd> node Anagram.js
+ * Execution    :   1. cmd> node Coupon.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Anagram.js
+ *                  2. cmd> nodemon Coupon.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   To generate the unique coupon numbers.
  * 
  * @description
  * 
- * @file        :   Anagram.js
- * @overview    :   Checks two String if they are simply a rearrangement of each other.
+ * @file        :   Coupon.js
+ * @overview    :   Use random numbers to generate coupon numbers.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   10-01-2019

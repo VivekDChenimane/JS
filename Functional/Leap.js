@@ -1,15 +1,15 @@
 /************************************************************
- * Execution    :   1. cmd> node Anagram.js
+ * Execution    :   1. cmd> node Leap.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Anagram.js
+ *                  2. cmd> nodemon Leap.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   Get to know whether the given year is Leap year or not.
  * 
  * @description
  * 
- * @file        :   Anagram.js
- * @overview    :   Checks two String if they are simply a rearrangement of each other.
+ * @file        :   Leap.js
+ * @overview    :   Check for leap year Using constraints.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   07-01-2019

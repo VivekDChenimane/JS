@@ -1,15 +1,15 @@
 /************************************************************
- * Execution    :   1. cmd> node Anagram.js
+ * Execution    :   1. cmd> node Euclidean.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Anagram.js
+ *                  2. cmd> nodemon Euclidean.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   To get the distance of a point from the origin.
  * 
  * @description
  * 
- * @file        :   Anagram.js
- * @overview    :   Checks two String if they are simply a rearrangement of each other.
+ * @file        :   Euclidean.js
+ * @overview    :   Uses Euclidean formulae to calculate the distance from the origin.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   09-01-2019
