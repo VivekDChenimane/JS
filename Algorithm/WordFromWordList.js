@@ -1,15 +1,15 @@
 /************************************************************
- * Execution    :   1. cmd> node Anagram.js
+ * Execution    :   1. cmd> node WordFromWordList.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Anagram.js
+ *                  2. cmd> nodemon WordFromWordList.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   Check for entered word present in the file.
  * 
  * @description
  * 
- * @file        :   Anagram.js
- * @overview    :   Checks two String if they are simply a rearrangement of each other.
+ * @file        :   WordFromWordList.js
+ * @overview    :   Scan the file, split the words to an array and check for the word.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   09-01-2019

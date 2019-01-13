@@ -1,15 +1,16 @@
 /************************************************************
- * Execution    :   1. cmd> node Anagram.js
+ * vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+ * Execution    :   1. cmd> node SumOfThreeToZero.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Anagram.js
+ *                  2. cmd> nodemon SumOfThreeToZero.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   To find the triplets whose sum is equal to Zero.
  * 
  * @description
  * 
- * @file        :   Anagram.js
- * @overview    :   Checks two String if they are simply a rearrangement of each other.
+ * @file        :   SumOfThreeToZero.js
+ * @overview    :   For all permutation of the string find the distinct triplets whose sum equals Zero.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   07-01-2019

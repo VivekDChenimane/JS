@@ -1,15 +1,16 @@
 /************************************************************
- * Execution    :   1. cmd> node Anagram.js
+ * vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+ * Execution    :   1. cmd> node PrimeAnagramPalindrome.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon Anagram.js
+ *                  2. cmd> nodemon PrimeAnagramPalindrome.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   Checks the numbers which are prime,anagram and palindrome.
  * 
  * @description
  * 
- * @file        :   Anagram.js
- * @overview    :   Checks two String if they are simply a rearrangement of each other.
+ * @file        :   PrimeAnagramPalindrome.js
+ * @overview    :   Filter the numbers and display the array of numbers which satisfy's each function.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   10-01-2019

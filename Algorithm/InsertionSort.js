@@ -4,12 +4,13 @@
  *                  2. cmd> nodemon InsertionSort.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Checks if two Strings are Anagram or not.
+ * Purpose      :   Sort the Array of numbers.
  * 
  * @description
  * 
  * @file        :   InsertionSort.js
- * @overview    :   Checks two String if they are simply a rearrangement of each other.
+ * @overview    :   Sort the array of numbers by inserting each element to its position by comparing it
+ *                  with the previous values.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   09-01-2019
