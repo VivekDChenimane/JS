@@ -21,7 +21,6 @@
  * '-sync' helps readline to sync even when the input/output stream is redirected.
  */
 const readline = require('readline-sync');
-
 module.exports={
 prime(range)
 {
@@ -49,6 +48,8 @@ prime(range)
 	}
 	return primes;
 },
+
+
 createArray(num){
 	var arr=[];
 	for(let index=0;index<num;index++)
@@ -280,5 +281,90 @@ anagramArr(arr)
 	{
 
 	}
-}
+},
+monthlyPayment(principle, year, rate) {
+	var R = rate / (12 * 100);
+	var n = 12 * year;
+	var rs = Math.pow((1 + R), (-n));
+	var calculation = (principle * R) / (1 - (rs));
+	console.log("The monthly payment " + calculation);
+},
+sqrt(num) {
+	if (num > 0) {
+		//formula 
+		var t = num;
+		var epsilon = 1e-15;
+		while (Math.abs(t - num / t) > epsilon * t) {
+			t = (num / t + t) / 2;
+		}
+		console.log("Squre root of non negative number is : ", t)
+	}
+	else {
+		console.log("Number should be positive ");
+	}
+},
+vendingMachine(amount, i, notes) {
+	var arr = [1000, 500, 100, 50, 10, 5, 2, 1];
+	if (amount == 0 && i == arr.length) {
+		console.log("Total number of notes ", notes);
+		return;
+	}
+	if (Math.floor(amount / arr[i]) > 0) {
+		console.log(arr[i] + " notes is " + Math.floor(amount / arr[i]));
+		notes = notes + Math.floor(amount / arr[i]);
+		amount = amount % arr[i];
+		this.vendingMachine(amount, i + 1, notes);
+		return;
+	}
+	this.vendingMachine(amount, i + 1, notes);
+},
+
+
+mergeSort(res) {
+	var n = res.length;
+	if (n < 2) {
+		return;
+	}
+	var mid = Math.floor(n / 2);
+	var left = [mid];
+	var right = [n - mid];
+	for (let i = 0; i < mid; i++) {
+		left[i] = res[i];
+	}
+	for (let j = mid; j < n; j++) {
+		right[j - mid] = res[j];
+	}
+	this.mergeSort(left);
+	this.mergeSort(right);
+	this.merge(left, right, res);
+
+},
+
+merge(arr, brr, crr) {
+	var i = 0; var j = 0;
+	var k = 0;
+	while (i < arr.length && j < brr.length) {
+		if (arr[i] <= brr[j]) {
+			crr[k] = arr[i]
+			i++;
+		}
+		else {
+			crr[k] = brr[j];
+			j++;
+		}
+		k++;
+	}
+	while (i < arr.length) {
+		crr[k] = arr[i];
+		i++;
+		k++;
+	}
+	while (j < brr.length) {
+		crr[k] = brr[j];
+		j++;
+		k++;
+	}
+	return crr;
+},
+
 }
