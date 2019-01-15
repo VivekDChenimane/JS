@@ -1,18 +1,18 @@
 /************************************************************
- * Execution    :   1. cmd> node UnorderedList.js
+ * Execution    :   1. cmd> node NumberOrderedList.js
  *                   if nodemon is installed:
- *                  2. cmd> nodemon UnorderedList.js
+ *                  2. cmd> nodemon NumberOrderedList.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   Search a element if present remove it otherwise add it to the file.
+ * Purpose      :   Search a number if present remove it otherwise add it to the file.
  * 
  * @description
  * 
- * @file        :   UnorderedList.js
+ * @file        :   NumberOrderedList.js
  * @overview    :   Use readfile to read all the words in the file with space as seperator.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
- * @since       :   14-01-2019
+ * @since       :   15-01-2019
  * 
  * **********************************************************/  
  /**
@@ -30,23 +30,26 @@ var ll = require('../Utility/LinkedList');
 var util = require('../Utility/DataStructureUtil');
 try {
     var linklist=new ll.LinkedList();
-    let data = util.readfile('../test.txt');
+    let data = util.readfile('../number.txt');
+    data = util.parse(data);
+    data = util.insertionSort(data);
+    console.log(data);
     for(let index=0;index<data.length;index++)
         linklist.add(data[index]);
     var display = linklist.display();
     console.log(display);
-    let name = readline.question("Enter the name you want to search");
-    var check = linklist.search(name);
+    let num = readline.questionInt("Enter the number you want to search");
+    var check = linklist.search(num);
     console.log(check);
     if(check){
-        linklist.remove(name);
-    }    
+        linklist.remove(num);
+    }
     else{
-        linklist.add(name);
+        linklist.addToPos(num);
     }
     var display = linklist.display();
     console.log(display);
-    util.writefile('../test.txt',display)
-} catch (err) { 
+    util.writefile('../number.txt',display)
+} catch (err) {
   console.error(err);
 }

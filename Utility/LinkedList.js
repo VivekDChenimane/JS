@@ -36,16 +36,31 @@ class LinkedList {
         if(this.head==null){
             return false;
         }
-
         var curr=this.head;
         while(curr){
-            if(curr.element==item){
+            if(curr.element==item)
                 return true;
-            }
-              
             curr=curr.next;
         }
         return false;
+}
+addToPos(element){
+    var curr=this.head;
+    var prev=curr;
+    console.log("curr->"+curr.next);
+    if(element<curr.element)
+    {
+        this.insertFirst(element);
+        return
+    }
+    var node = new Node(element);
+    while(element<curr.element)
+    {
+        prev=curr;
+        curr=curr.next;
+    }
+    prev.next=node;
+    node.next=curr;
 }
 remove(element){
 
@@ -72,7 +87,7 @@ display(){
     var curr=this.head;
     var str="";
     while(curr){
-        str=str+curr.element+" ";
+        str=str+curr.element;
         if(curr.next!=null){
             str=str+" ";
         }
