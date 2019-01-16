@@ -20,6 +20,8 @@
  * 'readline'helps to have conversation with the user via a console,
  * '-sync' helps readline to sync even when the input/output stream is redirected.
  */
+
+
 const readline = require('readline-sync');
 /**
  * import the Utility class to use the functionalities.
@@ -27,35 +29,40 @@ const readline = require('readline-sync');
 const stack = require('../Utility/Stack.js');
 function Stack()
 {
-    var stk= new stack.Stack;
+    var st= new stack.Stack;
     var str=readline.question("Enter your mathematical expression with parantheses ");
    var ch,i;
    
    for(i=0;i<str.length;i++)
-   { 
-       ch=str.charAt(i);
+   { ch=str.charAt(i);
     
        if(ch=='(' || ch=='[' || ch=='{')
        {
-            stk.push(ch);
+       st.push(ch);
+
        }
-       else
-       {
+       else{
            switch (ch)
            {
-               case ')' : if(stk.pop()!='(')
+               case ')' : if(st.pop()!='('){
                                 return false;
+                            }
                             break;
-               case ']' : if(stk.pop()!='[')
-                                return false;
-                            break;
-               case '}' : if(stk.pop()!='{')
-                                return false;
-                            break;
+               case ']' : if(st.pop()!='[')
+               {
+                   return false;
+               }
+               break;
+               case '}' : if(st.pop()!='{')
+               {
+                   return false;
+               }break;
            }
        }
+
+
    }
-   if(stk.getsize()==0){
+   if(st.getsize()==0){
    return true;
    }
    return false;
@@ -69,4 +76,4 @@ if(bol){
 }
 else{
     console.log("Not balanced");
-    }
+}

@@ -54,9 +54,9 @@ addToPos(element){
         return
     }
     var node = new Node(element);
-    while(element<curr.element)
-    {
-        prev=curr;
+    while(curr){
+        if(curr.element==item)
+            return true;
         curr=curr.next;
     }
     prev.next=node;
