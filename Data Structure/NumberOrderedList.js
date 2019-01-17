@@ -29,27 +29,56 @@ var ll = require('../Utility/LinkedList');
  */
 var util = require('../Utility/DataStructureUtil');
 try {
+     /**
+     * creating a reference to LinkedList class.
+     */
     var linklist=new ll.LinkedList();
+    /**
+     * variable which holds all the content of the file.
+     */
     let data = util.readfile('../number.txt');
+    /**
+     * parse all the contents to number.
+     */
     data = util.parse(data);
+    /**
+     * sort the numbers.
+     */
     data = util.insertionSort(data);
     console.log(data);
+    /**
+     * push each element to the linked list.
+     */
     for(let index=0;index<data.length;index++)
         linklist.add(data[index]);
     var display = linklist.display();
-    console.log(display);
     let num = readline.questionInt("Enter the number you want to search");
+    /**
+     * search for the number and set the check.
+     */
     var check = linklist.search(num);
     console.log(check);
+    /**
+     * remove if present add if not present.
+     */
     if(check){
         linklist.remove(num);
     }
     else{
         linklist.addToPos(num);
     }
+    /**
+     * display the updated list.
+     */
     var display = linklist.display();
-    console.log(display);
+    /**
+     * write back to the file.
+     */
     util.writefile('../number.txt',display)
-} catch (err) {
+}
+/**
+ * print the error if any occurs.
+ */
+catch (err) {
   console.error(err);
 }
