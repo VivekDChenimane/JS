@@ -82,24 +82,27 @@ class LinkedList {
      * @param {object} element 
      */
     addToPos(element){
-        var curr=this.head;
-        var prev=curr;
         var node = new Node(element);
-        if(element<curr.element){
-            this.insertFirst(element);
+        if (this.head == null) {
+            this.head = node;
+            this.size++;
             return;
         }
-        
-       // while(element>curr.element){
-        //    prev=curr;
-         //   curr=curr.next;
-     //   }
-     console.log("curr: "+ curr.element);
-     
-        prev.next=node;
-        node.next=curr;
-        this.size++;
-        return;
+        else {
+            var current = this.head;
+            var previous = current;
+            while (current.next) {
+                if(element>current.element){
+                    previous = current;
+                    current = current.next;
+                }
+                previous.next=node;
+                node.next=current;
+                break;
+            }
+            this.size++;
+            return;
+        }
     }
     /**
      * @description Delete the first similar element if it is present in the list.

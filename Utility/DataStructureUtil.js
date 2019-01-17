@@ -1,5 +1,5 @@
 const file=require('fs');
-
+var algoutil = require('../Utility/AlgoUtil');
 
 
 
@@ -56,8 +56,45 @@ insertionSort(input){
 	 * Returns the Sorted Array.
 	 */
     return input;
-}
+},
 
+findPrime(initial, final) {
+	var flag = 0, k = 0;
+	var prime = [];
+
+	for (var index1 = initial; index1 <= final; index1++) {
+		for (var index2 = 2; index2 < index1; index2++) {
+			if (index1 % index2 == 0) {
+				flag = 0;
+				break;
+			}
+			else {
+				flag = 1;
+			}
+		}
+		if (flag == 1) {
+			prime[k++] = index1;
+		}
+	}
+	return prime;
+},
+findAnaPrime(ii, jj) {
+	var primes = this.findPrime(ii, jj);
+	var n = primes.length;
+
+	var anaPrimes = [];
+	var h = 0;
+
+	for (let i = 0; i < n - 1; i++) {
+		for (let j = i + 1; j < n - 1; j++) {
+			if (algoutil.anagram(primes[i], primes[j])) {
+				anaPrimes[h++] = primes[i];
+				anaPrimes[h++] = primes[j];
+			}
+		}
+	}
+	return anaPrimes;
+}
 
 
 }
