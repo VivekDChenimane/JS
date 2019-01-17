@@ -1,6 +1,7 @@
 class Person{
-    constructor(){
-        this.cash = 20000; 
+    constructor(name){
+        this.cash = 0;
+        this.name = name 
     }
     deposit(amount){
         if(this.cash-amount<0){
@@ -21,8 +22,9 @@ class Person{
 module.exports={
     Person
 }
-/**
- * var p = new Person();
+
+ var p = new Person();
 var bal=p.balance();
+console.log(p.name)
 console.log(bal);
- */
+ 

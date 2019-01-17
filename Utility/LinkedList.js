@@ -12,17 +12,34 @@ class Node {
     }
 }
 class LinkedList {
+    /**
+     * Initialize head pointing to NULL and size to Zero.
+     */
     constructor() {
         this.head = null;
         this.size = 0;
     }
+    /**
+     * @description To add the element to the end of the list.
+     * 
+     * @param {object} element 
+     */
     add(element) {
+        /**
+         * create node for the element.
+         */
         var node = new Node(element);
+        /**
+         * if list is empty make head point to the above node.
+         */
         if (this.head == null) {
             this.head = node;
             this.size++;
             return;
         }
+        /**
+         * traverse to the last node and make last node to point to the above node.
+         */
         else {
             var current = this.head;
             while (current.next) {
@@ -32,69 +49,119 @@ class LinkedList {
             current.next = node;
         }
     }
+    /**
+     * @description Search the element is present or not in the list. 
+     * 
+     * @param {object} item
+     * 
+     * @returns boolean true-if present. 
+     *                  false -if not present. 
+     */
     search(item){
+        /**
+         * if list is empty return false.
+         */
         if(this.head==null){
             return false;
         }
         var curr=this.head;
+        /**
+         * traverse till the last node and compare each node with the element
+         * return true if any node matches else return false.
+         */
         while(curr){
             if(curr.element==item)
                 return true;
             curr=curr.next;
         }
         return false;
-}
-addToPos(element){
-    var curr=this.head;
-    var prev=curr;
-    console.log("curr->"+curr.next);
-    if(element<curr.element)
-    {
-        this.insertFirst(element);
-        return
     }
-    var node = new Node(element);
-    while(curr){
-        if(curr.element==item)
-            return true;
-        curr=curr.next;
-    }
-    prev.next=node;
-    node.next=curr;
-}
-remove(element){
-
-    var curr=this.head;
-    if(curr.element==element){
-        this.deleteFirst();
-        return;
-    }
-    var prev=curr;
-    while(curr){
-        if(curr.element==element){
-            prev.next=curr.next;
-            this.size--;
-            return curr.element;
-
+    /**
+     * @description To add the element to the suitable position when list is in ordered.
+     * 
+     * @param {object} element 
+     */
+    addToPos(element){
+        var curr=this.head;
+        var prev=curr;
+        var node = new Node(element);
+        if(element<curr.element){
+            this.insertFirst(element);
+            return;
         }
         
-        prev=curr;
-        curr=curr.next;
+       // while(element>curr.element){
+        //    prev=curr;
+         //   curr=curr.next;
+     //   }
+     console.log("curr: "+ curr.element);
+     
+        prev.next=node;
+        node.next=curr;
+        this.size++;
+        return;
     }
-return null;
-}
-display(){
-    var curr=this.head;
-    var str="";
-    while(curr){
-        str=str+curr.element;
-        if(curr.next!=null){
-            str=str+" ";
+    /**
+     * @description Delete the first similar element if it is present in the list.
+     * 
+     * @param {object} element 
+     */
+    remove(element){
+        var curr=this.head;
+        /**
+         * If the element is first element in the list,call deleteFirst function.
+         */
+        if(curr.element==element){
+            this.deleteFirst();
+            return;
         }
-        curr=curr.next;
+        var prev=curr;
+        /**
+         * traverse till pointer reaches the element
+         */
+        while(curr){
+            if(curr.element==element){
+                prev.next=curr.next;
+                this.size--;
+                return curr.element;
+
+            }
+            /**
+             * de-link the node of the element.
+             */
+            prev=curr;
+            curr=curr.next;
+        }
+        return null;
     }
-    return str;
-}
+    /**
+     * @description To display the contents of the list
+     * 
+     * @returns String of concatenated elements of the list.
+     */
+    display(){
+        /**
+         * Starting from head traverse till pointer pointing null.
+         */
+        var curr=this.head;
+        var str="";
+        /**
+         * Stop at last element where element points to null.
+         */
+        while(curr){
+            /**
+             * Concatenate the elements to str variable one by one.
+             */
+            str=str+curr.element;
+            //add space between elements
+            if(curr.next!=null){
+                str=str+" ";
+            }
+            curr=curr.next;
+        }
+        console.log(str);
+        return str;
+    }
     insertFirst(element) {
         var node = new Node(element);
         if (this.head == null) {

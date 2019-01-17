@@ -9,24 +9,21 @@ module.exports = {
         }
         console.log(arr);
          var first,second;
-        for (var j = 0; j < arr.length; j++) {
-            console.log(this.factorial(100));
-            console.log(this.factorial(200));
+         for (var j = 0; j < arr.length; j++) {
             var first =  (this.factorial(2*Number(arr[j])));
             var second = Number((this.factorial(Number(arr[j]) + 1)) * (this.factorial(Number(arr[j]))));
              var result = Math.floor((first / second));
              console.log("The total number of Node required for "+arr[j]+" is "+result);
-       }
        
-
+            }
     },
-    factorial(num) {
+    factorial(num){
         if(num>0)
         {
-        if (num == 0 || num == 1) {
-            return 1;
+            if (num == 0 || num == 1)
+                return 1;
+            return num*this.factorial(num-1);
         }
-        return num*this.factorial(num-1);
     }
-    }
+
 }

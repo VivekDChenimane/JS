@@ -4,12 +4,12 @@
  *                  2. cmd> nodemon BalancedParentheses.js
  *                   nodemon helps in restart the program after every changes.
  * 
- * Purpose      :   To generate the unique coupon numbers.
+ * Purpose      :   To check if the equation is balanced or not.
  * 
  * @description
  * 
  * @file        :   BalancedParentheses.js
- * @overview    :   Use random numbers to generate coupon numbers.
+ * @overview    :   To have equal number of pushs and pops of the parenthesis.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
  * @since       :   10-01-2019
@@ -26,54 +26,50 @@ const readline = require('readline-sync');
 /**
  * import the Utility class to use the functionalities.
  */
-const stack = require('../Utility/Stack.js');
+const stackutil = require('../Utility/Stack.js');
 function Stack()
 {
-    var st= new stack.Stack;
-    var str=readline.question("Enter your mathematical expression with parantheses ");
+    /**create a stach object */
+    var stack= new stackutil.Stack;
+    var expression=readline.question("Enter your mathematical expression with parantheses ");
    var ch,i;
-   
-   for(i=0;i<str.length;i++)
-   { ch=str.charAt(i);
-    
+   /**
+    * check each letter, if it is a open parenthesis push into the stack.
+    */
+   for(i=0;i<expression.length;i++){
+        ch=expression.charAt(i);
        if(ch=='(' || ch=='[' || ch=='{')
        {
-       st.push(ch);
-
+        stack.push(ch);
        }
-       else{
+       /**check if its a closing parenthesis and pop if it is so. */
+       else
            switch (ch)
            {
-               case ')' : if(st.pop()!='('){
+               /**
+                * checks letter with below closing parenthesis if it matches,
+                * pop the corresponding open parenthesis.
+                */
+               case ')' : if(stack.pop()!='(')
                                 return false;
-                            }
                             break;
-               case ']' : if(st.pop()!='[')
-               {
-                   return false;
-               }
-               break;
-               case '}' : if(st.pop()!='{')
-               {
-                   return false;
-               }break;
+               case ']' : if(stack.pop()!='[')
+                                return false;
+                            break;
+               case '}' : if(stack.pop()!='{')
+                                return false;
+                            break;
            }
-       }
-
-
    }
-   if(st.getsize()==0){
+   /**
+    * If the size of the stack is 0 return true as it is balanced
+    */
+   if(stack.getsize()==0)
    return true;
-   }
    return false;
 }
-var bol=Stack();
-
-
-if(bol){
+var check=Stack();
+if(check)
     console.log("String is balanced");
-    
-}
-else{
+else
     console.log("Not balanced");
-}

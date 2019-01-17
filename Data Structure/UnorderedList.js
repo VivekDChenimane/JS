@@ -29,13 +29,28 @@ var ll = require('../Utility/LinkedList');
  */
 var util = require('../Utility/DataStructureUtil');
 try {
+    /**
+     * creating a reference to LinkedList class.
+     */
     var linklist=new ll.LinkedList();
+    /**
+     * variable which holds all the content of the file.
+     */
     let data = util.readfile('../test.txt');
+    /**
+     * push each word into linked list.
+     */
     for(let index=0;index<data.length;index++)
         linklist.add(data[index]);
+    /**
+     * To display the content of the linked list.
+     */
     var display = linklist.display();
-    console.log(display);
     let name = readline.question("Enter the name you want to search");
+    /**
+     * search for the entered name,if present delete the name from list and if it is not 
+     * present add the element to the linked list. 
+     */
     var check = linklist.search(name);
     console.log(check);
     if(check){
@@ -44,9 +59,16 @@ try {
     else{
         linklist.add(name);
     }
+    /**
+     * Display the contents of the list.
+     */
     var display = linklist.display();
-    console.log(display);
+    /**
+     * Write the contents to the file.
+     */
     util.writefile('../test.txt',display)
-} catch (err) { 
+} 
+/**Prints the error if any error occurs. */
+catch (err) { 
   console.error(err);
 }
