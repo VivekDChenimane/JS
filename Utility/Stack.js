@@ -1,4 +1,20 @@
-
+/************************************************************
+ * Execution    :   1. cmd> node Stack.js
+ *                   if nodemon is installed:
+ *                  2. cmd> nodemon Stack.js
+ *                   nodemon helps in restart the program after every changes.
+ * 
+ * Purpose      :   Create a Stack array.
+ * 
+ * @description
+ * 
+ * @file        :   Stack.js
+ * @overview    :   Add all the functionalities of Stack.
+ * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
+ * @version     :   1.0
+ * @since       :   14-01-2019
+ * 
+ * **********************************************************/
 class Stack {
     /**
      * Intialize the values

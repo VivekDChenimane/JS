@@ -15,7 +15,7 @@
  * @version     :   1.0
  * @since       :   10-01-2019
  * 
- * **********************************************************/        
+ * **********************************************************/
 
 /**
  * 'readline'helps to have conversation with the user via a console,
@@ -27,7 +27,7 @@ const readline = require('readline-sync');
  */
 const util = require('../Utility/AlgoUtil');
 var range = readline.questionInt("Enter the range");
-var primes =util.prime(range);
+var primes = util.prime(range);
 var anagrams = util.anagramArr(primes);
 var values = util.palindrom(anagrams);
 console.log(values);

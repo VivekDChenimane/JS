@@ -1,4 +1,20 @@
-
+/************************************************************
+ * Execution    :   1. cmd> node LinkedList.js
+ *                   if nodemon is installed:
+ *                  2. cmd> nodemon LinkedList.js
+ *                   nodemon helps in restart the program after every changes.
+ * 
+ * Purpose      :   Create a Linked List array.
+ * 
+ * @description
+ * 
+ * @file        :   LinkedList.js
+ * @overview    :   Add all the functionalities of Linked List.
+ * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
+ * @version     :   1.0
+ * @since       :   14-01-2019
+ * 
+ * **********************************************************/
 /**
  * To create a new node which contains elements and holds the next element in it.
  */
@@ -57,22 +73,22 @@ class LinkedList {
      * @returns boolean true-if present. 
      *                  false -if not present. 
      */
-    search(item){
+    search(item) {
         /**
          * if list is empty return false.
          */
-        if(this.head==null){
+        if (this.head == null) {
             return false;
         }
-        var curr=this.head;
+        var curr = this.head;
         /**
          * traverse till the last node and compare each node with the element
          * return true if any node matches else return false.
          */
-        while(curr){
-            if(curr.element==item)
+        while (curr) {
+            if (curr.element == item)
                 return true;
-            curr=curr.next;
+            curr = curr.next;
         }
         return false;
     }
@@ -81,24 +97,33 @@ class LinkedList {
      * 
      * @param {object} element 
      */
-    addToPos(element){
+    addToPos(element) {
         var node = new Node(element);
         if (this.head == null) {
             this.head = node;
             this.size++;
             return;
         }
+        else if (this.head.element > element) {
+            this.insertFirst(element);
+            return;
+        }
         else {
             var current = this.head;
             var previous = current;
             while (current.next) {
-                if(element>current.element){
+                if (element > current.element) {
                     previous = current;
                     current = current.next;
                 }
-                previous.next=node;
-                node.next=current;
-                break;
+                else {
+                    previous.next = node;
+                    node.next = current;
+                    break;
+                }
+            }
+            if (!current.next) {
+                current.next = node;
             }
             this.size++;
             return;
@@ -109,22 +134,22 @@ class LinkedList {
      * 
      * @param {object} element 
      */
-    remove(element){
-        var curr=this.head;
+    remove(element) {
+        var curr = this.head;
         /**
          * If the element is first element in the list,call deleteFirst function.
          */
-        if(curr.element==element){
+        if (curr.element == element) {
             this.deleteFirst();
             return;
         }
-        var prev=curr;
+        var prev = curr;
         /**
          * traverse till pointer reaches the element
          */
-        while(curr){
-            if(curr.element==element){
-                prev.next=curr.next;
+        while (curr) {
+            if (curr.element == element) {
+                prev.next = curr.next;
                 this.size--;
                 return curr.element;
 
@@ -132,8 +157,8 @@ class LinkedList {
             /**
              * de-link the node of the element.
              */
-            prev=curr;
-            curr=curr.next;
+            prev = curr;
+            curr = curr.next;
         }
         return null;
     }
@@ -142,25 +167,25 @@ class LinkedList {
      * 
      * @returns String of concatenated elements of the list.
      */
-    display(){
+    display() {
         /**
          * Starting from head traverse till pointer pointing null.
          */
-        var curr=this.head;
-        var str="";
+        var curr = this.head;
+        var str = "";
         /**
          * Stop at last element where element points to null.
          */
-        while(curr){
+        while (curr) {
             /**
              * Concatenate the elements to str variable one by one.
              */
-            str=str+curr.element;
+            str = str + curr.element;
             //add space between elements
-            if(curr.next!=null){
-                str=str+" ";
+            if (curr.next != null) {
+                str = str + " ";
             }
-            curr=curr.next;
+            curr = curr.next;
         }
         console.log(str);
         return str;

@@ -14,26 +14,26 @@
  * @version     :   1.0
  * @since       :   07-01-2019
  * 
- * **********************************************************/        
+ * **********************************************************/
 
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
 const readline = require('readline-sync');
 /**
  * import the Utility class to use the functionalities.
  */
 const util = require('../Utility/Utility');
-var  stopWatch=()=>{
+var stopWatch = () => {
     var checker = readline.questionInt("Enter 1 to start")
-    if(checker)
-    var n = util.timeSecond();
+    if (checker)
+        var n = util.timeSecond();
     console.log("Time started")
     checker = readline.questionInt("Enter 0 to stop the stopwatch")
-    if(!checker)
-    var n1 = util.timeSecond();
+    if (!checker)
+        var n1 = util.timeSecond();
     console.log("Time stoped")
-    console.log("The time laps is "+Number(n1-n)+"sec.")
+    console.log("The time laps is " + Number(n1 - n) + "sec.")
 }
 stopWatch();

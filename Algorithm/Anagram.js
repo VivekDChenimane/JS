@@ -14,7 +14,7 @@
  * @version     :   1.0
  * @since       :   10-01-2019
  * 
- * **********************************************************/        
+ * **********************************************************/
 
 /**
  * 'readline'helps to have conversation with the user via a console,
@@ -37,9 +37,9 @@ var string2 = readline.question("Enter the second String");
  * The two Strings are passed to anagram function present in AlgoUtil class
  * check catches the boolean return value.
  */
-var check = util.anagram(string1,string2);
+var check = util.anagram(string1, string2);
 /**Print the statement based on the boolean value  */
-if(check)
+if (check)
     console.log("The Strings are Anagram");
-if(check==false)
+if (check == false)
     console.log("The String are not Anagram");

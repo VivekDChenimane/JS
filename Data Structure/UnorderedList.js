@@ -14,11 +14,11 @@
  * @version     :   1.0
  * @since       :   14-01-2019
  * 
- * **********************************************************/  
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
+ * **********************************************************/
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
 const readline = require('readline-sync');
 /**
  * import the Utility class to use the functionalities of LinkedList.
@@ -32,7 +32,7 @@ try {
     /**
      * creating a reference to LinkedList class.
      */
-    var linklist=new ll.LinkedList();
+    var linklist = new ll.LinkedList();
     /**
      * variable which holds all the content of the file.
      */
@@ -40,7 +40,7 @@ try {
     /**
      * push each word into linked list.
      */
-    for(let index=0;index<data.length;index++)
+    for (let index = 0; index < data.length; index++)
         linklist.add(data[index]);
     /**
      * To display the content of the linked list.
@@ -53,10 +53,10 @@ try {
      */
     var check = linklist.search(name);
     console.log(check);
-    if(check){
+    if (check) {
         linklist.remove(name);
-    }    
-    else{
+    }
+    else {
         linklist.add(name);
     }
     /**
@@ -66,9 +66,9 @@ try {
     /**
      * Write the contents to the file.
      */
-    util.writefile('../test.txt',display)
-} 
+    util.writefile('../test.txt', display)
+}
 /**Prints the error if any error occurs. */
-catch (err) { 
-  console.error(err);
+catch (err) {
+    console.error(err);
 }

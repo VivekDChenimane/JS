@@ -14,12 +14,12 @@
  * @version     :   1.0
  * @since       :   08-01-2019
  * 
- * **********************************************************/        
+ * **********************************************************/
 
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
 const readline = require('readline-sync');
 /**
  * import the Utility class to use the functionalities.
@@ -29,5 +29,5 @@ console.log("Quadratic equation is of the form aX2 + bX + c =0");
 var a = readline.questionInt('Enter the value of A');
 var b = readline.questionInt('Enter the value of B');
 var c = readline.questionInt('Enter the value of C');
-var root = util.quadratic(a,b,c);
-console.log("The values of x are "+root[0]+" and "+root[1]);
+var root = util.quadratic(a, b, c);
+console.log("The values of x are " + root[0] + " and " + root[1]);

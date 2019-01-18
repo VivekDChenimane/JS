@@ -14,11 +14,11 @@
  * @version     :   1.0
  * @since       :   15-01-2019
  * 
- * **********************************************************/  
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
+ * **********************************************************/
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
 const readline = require('readline-sync');
 /**
  * import the Utility class to use the functionalities of LinkedList.
@@ -29,10 +29,10 @@ var ll = require('../Utility/LinkedList');
  */
 var util = require('../Utility/DataStructureUtil');
 try {
-     /**
-     * creating a reference to LinkedList class.
-     */
-    var linklist=new ll.LinkedList();
+    /**
+    * creating a reference to LinkedList class.
+    */
+    var linklist = new ll.LinkedList();
     /**
      * variable which holds all the content of the file.
      */
@@ -45,11 +45,10 @@ try {
      * sort the numbers.
      */
     data = util.insertionSort(data);
-    console.log(data);
     /**
      * push each element to the linked list.
      */
-    for(let index=0;index<data.length;index++)
+    for (let index = 0; index < data.length; index++)
         linklist.add(data[index]);
     var display = linklist.display();
     let num = readline.questionInt("Enter the number you want to search");
@@ -61,10 +60,10 @@ try {
     /**
      * remove if present add if not present.
      */
-    if(check){
+    if (check) {
         linklist.remove(num);
     }
-    else{
+    else {
         linklist.addToPos(num);
     }
     /**
@@ -74,11 +73,11 @@ try {
     /**
      * write back to the file.
      */
-    util.writefile('../number.txt',display)
+    util.writefile('../number.txt', display)
 }
 /**
  * print the error if any occurs.
  */
 catch (err) {
-  console.error(err);
+    console.error(err);
 }

@@ -14,12 +14,12 @@
  * @version     :   1.0
  * @since       :   06-01-2019
  * 
- * **********************************************************/        
+ * **********************************************************/
 
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
 const readline = require('readline-sync');
 /**
  * import the Utility class to use the functionalities.

@@ -11,12 +11,12 @@
  * @version     :   1.0
  * @since       :   09-01-2019
  * 
- * **********************************************************/        
+ * **********************************************************/
 
- /**
- * 'readline'helps to have conversation with the user via a console,
- * '-sync' helps readline to sync even when the input/output stream is redirected.
- */
+/**
+* 'readline'helps to have conversation with the user via a console,
+* '-sync' helps readline to sync even when the input/output stream is redirected.
+*/
 
 const readline = require('readline-sync');
 module.exports = {
@@ -34,11 +34,11 @@ module.exports = {
         console.log("The percentage of tails is :" + (tails / times) * 100 + "%");
     },
 
- /**
-  * @description   To check wheather the Entered year is a leap year or not.
-  * 
-  * @param {Integer} year
-  */
+    /**
+     * @description   To check wheather the Entered year is a leap year or not.
+     * 
+     * @param {Integer} year
+     */
 
     leap(year) {
         /**

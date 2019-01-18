@@ -1,158 +1,103 @@
-class Deque
-{
-    constructor()
-    {
-        this.front=-1;
-        this.rear=0;
-        this.size=30;
-        this.arr=new Array(30);
+/************************************************************
+ * Execution    :   1. cmd> node Deque.js
+ *                   if nodemon is installed:
+ *                  2. cmd> nodemon Deque.js
+ *                   nodemon helps in restart the program after every changes.
+ * 
+ * Purpose      :   Create a Deque array.
+ * 
+ * @description
+ * 
+ * @file        :   Deque.js
+ * @overview    :   Add all the functionalities of Deque.
+ * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
+ * @version     :   1.0
+ * @since       :   14-01-2019
+ * 
+ * **********************************************************/
+class Deque {
+    constructor() {
+        this.front = -1;
+        this.rear = 0;
+        this.size = 30;
+        this.arr = new Array(30);
     }
 
-    isFull()
-    {
-        if((this.front==0 &&this.rear==this.size-1 )||(this.rear+1==this.front))
-        {
+    isFull() {
+        if ((this.front == 0 && this.rear == this.size - 1) || (this.rear + 1 == this.front)) {
             return true;
         }
         return false;
     }
-    isEmpty()
-    {
-      return this.front==-1;
+    isEmpty() {
+        return this.front == -1;
     }
 
-    addFront(item)
-    {
-        if(this.isFull())
-        {
+    addFront(item) {
+        if (this.isFull()) {
             console.log("Queue overflow");
             return;
         }
-     if(this.front==-1)
-        {
-            this.front=0;
-            this.rear=0;
+        if (this.front == -1) {
+            this.front = 0;
+            this.rear = 0;
         }
-        else if(this.front==0)
-        {
-            this.front=this.arr.length-1;
+        else if (this.front == 0) {
+            this.front = this.arr.length - 1;
         }
-        else{
+        else {
             this.front--;
         }
-        this.arr[this.front]=item;
+        this.arr[this.front] = item;
     }
-    addRear(item)
-    {
-        if(this.isFull())
-        {
+    addRear(item) {
+        if (this.isFull()) {
             console.log("Queue overflow");
             return;
         }
-        if(this.front==-1)
-        {
-            this.front=0;
-            this.rear=0;
+        if (this.front == -1) {
+            this.front = 0;
+            this.rear = 0;
         }
-        else if(this.front==this.arr.length-1)
-        {
-            this.rear=0;
+        else if (this.front == this.arr.length - 1) {
+            this.rear = 0;
         }
-        else
-        {
+        else {
             this.rear++;
         }
-        this.arr[this.rear]=item;
+        this.arr[this.rear] = item;
     }
-    removeRear()
-    {
-        if(this.isEmpty())
-        {
-            console.log("Queue underflow");
-            return;
-        }
-        var item;
-         if(this.rear==this.front)
-        {
-        item=this.arr[this.rear];
-          this.rear=-1;
-          this.front=-1;
-        }
-        else if(this.rear==0)
-        {
-            item=this.arr[this.rear];
-            this.rear=this.arr.length-1;
-        }
-        else{
-            item=this.arr[this.rear]
-            this.rear=this.rear--;
-        }
-        return item;
-    }
-    removeFront()
-    {
-        if(this.isEmpty())
-        {
-            console.log("Queue underflow");
-            return;
-        }
-        var item;
-        if(this.front==this.rear)
-        {
-            item=this.arr[this.front];
-            this.front=-1;
-            this.rear=-1;
-        }
-        else if(this.front==this.arr.length-1)
-        {
-          item=this.arr[this.front];
-          this.front--;
-        }
-        else
-        {
-            item=this.arr[this.front];
-            this.front++;
-        }
-        return item;
-    }
-    getFront()
-    {
-        if(this.isEmpty())
-        {
+
+    getFront() {
+        if (this.isEmpty()) {
             return -1;
         }
         return this.arr[this.front];
     }
-    getRear()
-    {
-        if(this.isEmpty())
-        {
+    getRear() {
+        if (this.isEmpty()) {
             return -1;
         }
         return this.arr[this.rear];
     }
-     
-    
-    PalindromeChecker(str)
-    {
-        for(let i=0;i<str.length;i++)
-        {
+
+
+    PalindromeChecker(str) {
+        for (let i = 0; i < str.length; i++) {
             this.addRear(str.charAt(i));
         }
-        while(this.front!=this.rear && this.front<this.rear)
-        {
-            
-            if(this.getFront()!=this.getRear())
-            {
+        while (this.front != this.rear && this.front < this.rear) {
+
+            if (this.getFront() != this.getRear()) {
                 return false;
             }
             this.front++;
             this.rear--;
         }
-       return true;
+        return true;
     }
 }
 
-module.exports={
+module.exports = {
     Deque
 }

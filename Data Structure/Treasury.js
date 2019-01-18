@@ -1,17 +1,17 @@
-class Treasury{
-    constructor(){
+class Treasury {
+    constructor() {
         this.totalAmount = 200000;
     }
-    balance(){
+    balance() {
         return this.totalAmount;
     }
-    receiveAmount(amount){
-        this.totalAmount+=amount;
+    receiveAmount(amount) {
+        this.totalAmount += amount;
     }
-    dispatchAmount(amount){
-        this.totalAmount-=amount;
+    dispatchAmount(amount) {
+        this.totalAmount -= amount;
     }
 }
-module.exports={
+module.exports = {
     Treasury
 }

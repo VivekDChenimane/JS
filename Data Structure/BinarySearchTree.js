@@ -1,29 +1,22 @@
-var readline = require('readline-sync');
-module.exports = {
-    binarySearchTree() {
-        var number = readline.question("Enter the total number of test cases");
-        var arr = [];
-        console.log("Enter your integers");
-        for (var i = 0; i < number; i++) {
-            arr[i] = readline.questionInt();
-        }
-        console.log(arr);
-         var first,second;
-         for (var j = 0; j < arr.length; j++) {
-            var first =  (this.factorial(2*Number(arr[j])));
-            var second = Number((this.factorial(Number(arr[j]) + 1)) * (this.factorial(Number(arr[j]))));
-             var result = Math.floor((first / second));
-             console.log("The total number of Node required for "+arr[j]+" is "+result);
-       
-            }
-    },
-    factorial(num){
-        if(num>0)
-        {
-            if (num == 0 || num == 1)
-                return 1;
-            return num*this.factorial(num-1);
-        }
-    }
-
-}
+/************************************************************
+ * Execution    :   1. cmd> node BinarySearchTree.js
+ *                   if nodemon is installed:
+ *                  2. cmd> nodemon BinarySearchTree.js
+ *                   nodemon helps in restart the program after every changes.
+ * 
+ * Purpose      :   compute the posible number of nodes for the given number of node.
+ * 
+ * @description
+ * 
+ * @file        :   BinarySearchTree.js
+ * @overview    :   Take the number of test cases and get the posible ways by mathematical foemulae.
+ * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
+ * @version     :   1.0
+ * @since       :   14-01-2019
+ * 
+ * **********************************************************/
+/**
+ * Run the functionality in the Utility.
+ */
+var bst = require('../Utility/DataStructureUtil');
+bst.binarySearchTree();
