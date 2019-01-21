@@ -92,6 +92,6 @@ class Queue {
 
 }
 
-module.exports = {
+module.exports = { 
     Queue
 }
