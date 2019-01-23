@@ -1,0 +1,24 @@
+{
+    "stock": [
+        {
+            "stock_name": "Bridge Lab",
+            "Number_of_shares": "50",
+            "share_price": "10000"
+        },
+        {
+            "stock_name": "Accenture",
+            "Number_of_shares": "75",
+            "share_price": "6500"
+        },
+        {
+            "stock_name": "Infosys  ",
+            "Number_of_shares": "97",
+            "share_price": "7600"
+        },
+        {
+            "stock_name": "huawei  ",
+            "Number_of_shares": "80",
+            "share_price": "9500"
+        }
+    ]
+}

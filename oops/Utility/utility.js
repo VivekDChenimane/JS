@@ -10,17 +10,15 @@ class Inventory {
 }
 module.exports = {
     writeToFile(path, data) {
-        fileSystem.writeFile(path, data, (err) => {
+        fileSystem.writeFileSync(path, data, (err) => {
             if (err) throw err;
         });
-        console.log("done");
         return;
     },
     readFromFile(path) {
-        let data = fileSystem.readFile(path, err => {
+        let data = fileSystem.readFileSync(path, err => {
             if (err) throw err;
         });
-        console.log(data);
         return data;
     }
     ,
@@ -29,7 +27,6 @@ module.exports = {
         item = this.validateString(item);
         var quantity = readline.questionInt("Enter the quantity of " + item + ":");
         var price = readline.questionFloat("Enter the price per kg:")
-        console.log(price);
         store.push(new Inventory(item, quantity, price));
         return;
     }
@@ -54,12 +51,11 @@ module.exports = {
                 console.log(element.item + "\t " + element.quantity + " \t\t" + element.price + "\t\t" + total);
             }
         }
-        console.log("Total amount \t\t\t"+sum);
+        console.log("Total amount \t\t\t\t"+sum);
     }
     ,
     stringify(path, data) {
         data = JSON.stringify(data);
-        console.log(data);
         this.writeToFile(path, data);
         return;
     },
@@ -70,9 +66,7 @@ module.exports = {
     ,
     parse(path) {
         let data = this.readFromFile(path);
-        console.log(data);
         data = JSON.parse(data);
-        console.log(data);
         return data;
     }
     ,
@@ -100,5 +94,21 @@ module.exports = {
                 flag = false;
         } while (flag)
         return string;
+    }
+    ,
+    stockReport() {
+        let data = this.parse('../jsonFiles/stockReport.json');
+        let sum = 0;
+        console.log("\nCompany\t\t No.of Shares\tShare Price\tStock Value");
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                data[key].forEach(element => {
+                    let total = element.Number_of_shares * element.share_price;
+                sum += total;
+                console.log(element.stock_name + "\t " + element.Number_of_shares + " \t\t" + element.share_price + "\t\t" + total);
+                });                
+            }
+        }
+        console.log("Total value \t\t\t\t\t"+sum+"\n");
     }
 }
