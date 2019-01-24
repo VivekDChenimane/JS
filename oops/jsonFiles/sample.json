@@ -1,0 +1,134 @@
+[
+    {
+        "name": "Vivek",
+        "id": 1,
+        "amount": 10000,
+        "shares": [
+            {
+                "company": "Google",
+                "symbol": "~",
+                "no_of_shares": 10
+            },
+            {
+                "company": "MicroSoft",
+                "symbol": "!",
+                "no_of_shares": 15
+            },
+            {
+                "company": "Twitter",
+                "symbol": "@",
+                "no_of_shares": 20
+            }
+        ]
+    },
+    {
+        "name": "vikas",
+        "id": 2,
+        "amount": 10000,
+        "shares": [
+            {
+                "company": "Google",
+                "symbol": "~",
+                "no_of_shares": 10
+            },
+            {
+                "company": "MicroSoft",
+                "symbol": "!",
+                "no_of_shares": 15
+            },
+            {
+                "company": "Twitter",
+                "symbol": "@",
+                "no_of_shares": 20
+            }
+        ]
+    },
+    {
+        "name": "dev",
+        "id": 3,
+        "amount": 10000,
+        "shares": [
+            {
+                "company": "Google",
+                "symbol": "~",
+                "no_of_shares": 10
+            },
+            {
+                "company": "MicroSoft",
+                "symbol": "!",
+                "no_of_shares": 15
+            },
+            {
+                "company": "Twitter",
+                "symbol": "@",
+                "no_of_shares": 20
+            }
+        ]
+    }
+]
+class customer{
+    constructor(name,id,amount)
+    {
+        this.name=name;
+        this.id=id;
+        this.amount=amount;
+        this.shares=[];
+    }
+}
+var util = require('../Utility/utility');
+var data = util.readFromFile('../jsonFiles/customer.json');
+data = JSON.parse(data);
+for (const key in data) {
+    if (data.hasOwnProperty(key)) {
+        const element = data[key
+        ];
+        console.log(element);
+    }
+}
+let name="dev";
+var customer1 = new customer(name,
+4,
+40000);
+console.log(customer1);
+for (const key in data) {
+    console.log("Before loop");
+    if (data.customer) {
+        console.log("After loop");
+        const element = data[key
+        ];
+        element.push(customer1);
+    }
+}
+for (const key in data) {
+    if (data.hasOwnProperty(key)) {
+        const element = data[key
+        ];
+        console.log(element);
+        if(element=="dev")
+            console.log("Done")
+    }
+}
+var data1=JSON.stringify(data);
+util.writeToFile('../jsonFiles/customer.json',data1);
+{
+    "company": [
+        {
+            "name": "Google",
+            "symbol": "~",
+            "no_of_shares": 100,
+            "available": 20
+        },
+        {
+            "name": "MicroSoft",
+            "symbol": "!",
+            "no_of_shares": 100,
+            "available": 20
+        },
+        {
+            "name": "Twitter",
+            "symbol": "@",
+            "no_of_shares": 100,
+            "available": 20
+        }
+    ]
+}

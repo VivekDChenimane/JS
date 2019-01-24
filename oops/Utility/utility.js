@@ -94,6 +94,11 @@ module.exports = {
                 flag = false;
         } while (flag)
         return string;
+    },
+    validatePhno(value){
+        while(value<6000000000||value.length<10000000000)
+                value=readline.questionInt("Please enter the correct Phone number.");
+        return value;
     }
     ,
     stockReport() {
@@ -111,4 +116,58 @@ module.exports = {
         }
         console.log("Total value \t\t\t\t\t"+sum+"\n");
     }
+    ,
+    deckOfCards() {
+        var queue = require('../Utility/queue');
+        var sort=require('../../Utility/algoUtil');
+        var take = require('util');
+        var person1 = new queue.Queue;
+        var person2 = new queue.Queue;
+        var person3 = new queue.Queue;
+        var person4 = new queue.Queue;
+        var suit = ["♣️", "🔸", "❤️", "♠️"];
+        var rank = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"];
+        var deck = new Array();
+        var n = suit.length * rank.length;
+        for (let i = 0; i < suit.length; i++) {
+            for (let j = 0; j < rank.length; j++) {
+                deck.push(suit[i]+"-"+rank[j]);
+            }
+        }
+        for (let i = 0; i < n; i++) {
+            var random = parseInt(Math.random() * deck.length)
+            var temp = deck[i];
+            deck[i] = deck[random];
+            deck[random] = temp;
+        }
+        console.log(deck);
+        var array = [];
+     for (let i = 0; i < n; i++) {
+        if(i<13){
+            person1.enque(deck[i]);
+        }else if(i<26){
+            person2.enque(deck[i]);
+        }else if(i<39){
+            person3.enque(deck[i]);
+        }else{
+            person4.enque(deck[i]);
+        }
+     }
+     array=person1.getData().split(' ');
+     console.log(array[0]);
+     array1=person2.getData().split(' ');
+     array2=person3.getData().split(' ');
+     array3=person4.getData().split(' ');
+     
+     
+     sort.insertionSort(array);
+     sort.insertionSort(array1);
+     sort.insertionSort(array2);
+     sort.insertionSort(array3);
+
+     console.log("Player 1 have this cards :  "+array.join());
+     console.log("Player 2 have this cards :  "+array1.join());
+     console.log("Player 3 have this cards :  "+array2.join());
+     console.log("Player 4 have this cards :  "+array3.join());
+}
 }

@@ -1,7 +1,10 @@
-var stack = require('../Utility/stack');
-var list = new stack.Stack;
-list.push(05);
-list.peek();
-list.dispaly();
-list.pop();
-list.dispaly();
+var util = require('../Utility/utility');
+var data = util.readFromFile('../jsonFiles/company.json');
+data = JSON.parse(data);
+for (const key in data) {
+    if (data.hasOwnProperty(key)) {
+        const element = data[key];
+        console.log(element);
+    }
+}
+console.log(data);

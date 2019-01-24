@@ -215,8 +215,8 @@ class LinkedList {
         var str = "";
         while (curr) {
             str = str + curr.element + " ";
-            if (curr.next != null) {
-                str = str + "  ";
+            if (curr.next= null) {
+                str = str + " ";
             }
             curr = curr.next;
         }
@@ -235,18 +235,18 @@ class LinkedList {
         }
         return curr.element;
     }
-   /* getData() {
+    getData() {
         var curr = this.head;
         var str = "";
         while (curr) {
-            str = str + curr.element;
-            if (curr.next != null) {
+            str = str + curr.element+" ";
+            if (curr.next= null) {
                 str = str + " ";
             }
             curr = curr.next;
         }
         return str;
-    }*/
+    }
 
 
 

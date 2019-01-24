@@ -88,7 +88,7 @@ module.exports = {
 
 	insertionSort(input) {
 		/**
-		 * Temporary variable to store values while swapping.
+		 * Temporary variable to store values while swapping. 
 		 */
 		var temp;
 		/**

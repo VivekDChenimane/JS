@@ -1,0 +1,22 @@
+{
+    "company": [
+        {
+            "name": "Google",
+            "symbol": "~",
+            "no_of_shares": 100,
+            "available": 20
+        },
+        {
+            "name": "MicroSoft",
+            "symbol": "!",
+            "no_of_shares": 100,
+            "available": 20
+        },
+        {
+            "name": "Twitter",
+            "symbol": "@",
+            "no_of_shares": 100,
+            "available": 20
+        }
+    ]
+}
