@@ -1,5 +1,18 @@
+/************************************************************
+ * 
+ * Purpose      :   Utility for OOPS programs.
+ * 
+ * @description
+ * 
+ * @file        :   addressBook.js
+ * @overview    :   All the functionalities required for Algorithm programs are coded here.
+ * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
+ * @version     :   1.0
+ * @since       :   24-01-2019
+ * 
+ * **********************************************************/
 let readline = require('readline-sync');
-let util = require('../Utility/utility')
+let util = require('./utility')
 let filestream = require('fs');
 module.exports={address_book(data) {
     var answer = readline.question("  Press \n 1.To add Person \n 2. To update Person \n 3. To delete Person \n 4. To sort the file by Zip \n 5. To sort the file by name \n 6. To display \n 7. To exit ");

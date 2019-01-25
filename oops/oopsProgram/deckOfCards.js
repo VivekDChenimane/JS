@@ -1,4 +1,27 @@
+/************************************************************
+ * Execution    :   1. cmd> node deckOfCards.js
+ *                   if nodemon is installed:
+ *                  2. cmd> nodemon deckOfCards.js
+ *                   nodemon helps in restart the program after every changes.
+ * 
+ * Purpose      :   To access the phone book data and do CURD operations.
+ * 
+ * @description
+ * 
+ * @file        :   deckOfCards.js
+ * @overview    :   To perform CURD operations on json file for phone book.
+ * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
+ * @version     :   1.0
+ * @since       :   22-01-2019
+ * 
+ * **********************************************************/
+/**
+ * @description import queue of linked list from Utility
+ */
 const queue = require('../Utility/queue');
+/**
+ * @description import algoUtil for using insertion sort.
+ */
 var sort = require('../../Utility/algoUtil');
 function deckOfCards() {
     var person = [];

@@ -1,3 +1,16 @@
+/************************************************************
+ * 
+ * Purpose      :   Utility for OOPS programs.
+ * 
+ * @description
+ * 
+ * @file        :   linkedList.js
+ * @overview    :   All the functionalities required for Algorithm programs are coded here.
+ * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
+ * @version     :   1.0
+ * @since       :   24-01-2019
+ * 
+ * **********************************************************/
 class Node {
 
     constructor(element) {
@@ -247,7 +260,18 @@ class LinkedList {
         }
         return str;
     }
-
+    getLinkList() {
+        var curr = this.head;
+        var str = "{";
+        while (curr) {
+            str = str + curr.element+",";
+            if (curr.next= null) {
+                str = str + "}";
+            }
+            curr = curr.next;
+        }
+        return str;
+    }
 
 
 }

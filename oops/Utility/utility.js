@@ -1,3 +1,16 @@
+/************************************************************
+ * 
+ * Purpose      :   Utility for OOPS programs.
+ * 
+ * @description
+ * 
+ * @file        :   utility.js
+ * @overview    :   All the functionalities required for Algorithm programs are coded here.
+ * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
+ * @version     :   1.0
+ * @since       :   24-01-2019
+ * 
+ * **********************************************************/
 let fileSystem = require('fs');
 let readline = require('readline-sync');
 var store = [];

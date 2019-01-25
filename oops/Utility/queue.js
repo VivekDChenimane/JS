@@ -8,7 +8,7 @@
  * @overview    :   Add all the functionalities of Queue.
  * @author      :   Vivek D Chenimane <vivekdchenimane@gmail.com>
  * @version     :   1.0
- * @since       :   14-01-2019
+ * @since       :   24-01-2019
  * 
  * **********************************************************/
 var util = require('../Utility/linkedList');
