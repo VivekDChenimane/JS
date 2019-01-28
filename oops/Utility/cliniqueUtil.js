@@ -14,6 +14,9 @@
 var readline = require('readline-sync');
 var fileSystem = require('fs');
 var util = require('../Utility/utility');
+/** 
+ * @description Access the json object.
+*/
 var data = util.readFromFile('../jsonFiles/clinique.json');
 var clinique = JSON.parse(data);
 module.exports = {
@@ -38,6 +41,9 @@ module.exports = {
         console.log("Appointment Added Successfully...");
         util.stringify('../jsonFiles/clinique1.json', clinique);
     },
+    /**
+     * @description To the the person detail from the database.
+     */
     search() {
         console.log("****SEARCH LIST******");
         var choice = readline.questionInt('Enter Option:\n1.Doctor\n2.Patient');
@@ -53,6 +59,9 @@ module.exports = {
             default: console.log("Enter correct value.");
         }
     },
+    /**
+     * @description To search the doctor deatils.
+     */
     searchDoctor() {
         var choice = readline.questionInt('Enter option:\n1.Search by Name\n2.Search by ID\n3.Search by Specialization\n4.Search by Availability');
         switch (choice) {
@@ -109,6 +118,9 @@ module.exports = {
         }
     }
     ,
+    /**
+     * @description To search the patient details from database.
+     */
     searchPatient() {
         var choice = readline.questionInt('Enter option:1.Search by Name\n2.Search by ID\n3.Search by mobNo\n4.Search by Age ');
         switch (choice) {
